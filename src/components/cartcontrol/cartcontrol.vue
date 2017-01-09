@@ -19,15 +19,18 @@
 		},
 		methods: {
 			addCart(event) {
+				console.log("click")
 		        if (!event._constructed) {
 		          	return;
 		        }
 
 				if(!this.food.count){
+					console.log(1)
 					Vue.set(this.food, 'count', 1)
 				}else{
 					this.food.count++;
 				}
+				console.log(this.food.count)
 				this.$dispatch('cart.add', event.target);
 			},
 			decreaseCart(event) {
